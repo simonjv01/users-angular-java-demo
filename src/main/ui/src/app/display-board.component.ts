@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 
 @Component({
   selector: 'app-display-board',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./display-board.component.css']
 })
 export class DisplayBoardComponent implements OnInit {
+  [x: string]: any;
 
   constructor() { }
 
+  @Input() userCount = 0;
+  @Output() getUsersEvent = new EventEmitter();
   ngOnInit(): void {
+  }
+
+  getAllUsers() {
+    this['getUsersEvent'].emit('get all users');
   }
 
 }

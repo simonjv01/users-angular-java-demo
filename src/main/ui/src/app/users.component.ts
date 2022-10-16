@@ -9,7 +9,7 @@ export class UsersComponent implements OnInit {
 
   constructor() { }
 
-  @Input() users: any[];
+  @Input() users: any[] | undefined;
 
   ngOnInit(): void {
   }
